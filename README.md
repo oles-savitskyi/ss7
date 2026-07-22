@@ -1,12 +1,22 @@
 # SS7
 
-Python Accounting System
+A modern configuration-driven platform
+for building business information systems.
 
-Current status:
+Status
 
-- architecture
-- metadata
-- catalogs
-- documents
-- registers
-- reports
+🚧 Early architecture and specification phase
+
+Documentation
+
+Engineering Principles
+
+Documentation Standard
+
+Scope
+
+Vision
+
+Roadmap
+
+License
