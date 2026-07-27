@@ -161,6 +161,16 @@ The set of tools used to create, maintain, test, and deploy SS7 configurations.
 
 ---
 
+## Domain Object
+
+A Domain Object is the architectural representation of a business entity within the SS7 platform.
+
+Domain Objects encapsulate business state, behavior and relationships while executing within the Runtime Environment.
+
+A Domain Object is defined by Metadata and exists as a Runtime Object during execution.
+
+---
+
 ## Interface
 
 An Interface is a programming-language construct used to implement one or more architectural Contracts.
@@ -187,6 +197,68 @@ Metadata defines what a configuration contains rather than how the platform is i
 
 - Configuration
 - Runtime
+
+---
+
+## Object Composition
+
+Object Composition is the architectural process of assembling a Domain Object from its architectural components.
+
+Object Composition combines Object Identity, Object Type, Object State, Object Behavior and Object Relationships into a coherent Runtime Object.
+
+---
+
+## Object Identity
+
+Object Identity is the immutable architectural identity of a Domain Object.
+
+Object Identity uniquely distinguishes one Domain Object from all other objects throughout its lifetime.
+
+Object Identity remains stable regardless of changes to the object's state.
+
+---
+
+## Object Instance
+
+An Object Instance is a concrete realization of a Metadata-defined Domain Object.
+
+Every Runtime Object is an Object Instance of exactly one Metadata Object.
+
+---
+
+## Object Lifetime
+
+Object Lifetime is the period during which a Runtime Object exists within the Runtime Environment.
+
+Object Lifetime begins when the Runtime Object is created and ends when it is disposed.
+
+---
+
+## Object Reference
+
+An Object Reference is the architectural relationship that allows one Domain Object to refer to another Domain Object.
+
+Object References connect Domain Object identities while remaining independent of object ownership, persistence mechanisms and implementation details.
+
+Object References are resolved by the Runtime during execution.
+
+---
+
+## Object State
+
+Object State is the complete set of mutable values associated with a Runtime Object at a particular moment in time.
+
+Object State changes during execution while Object Identity remains unchanged.
+
+---
+
+## Persistent Object
+
+A Persistent Object is the storage representation of a Runtime Object.
+
+Persistent Objects are optimized for durability and persistence rather than execution.
+
+The mapping between Runtime Objects and Persistent Objects is defined by the Storage subsystem.
 
 ---
 
@@ -260,6 +332,70 @@ Examples include:
 
 ---
 
+## Reference Cardinality
+
+Reference Cardinality defines how many target Domain Objects may be associated with a single Reference Source.
+
+Typical cardinalities include one-to-one, one-to-many and many-to-many relationships.
+
+---
+
+## Reference Integrity
+
+Reference Integrity is the architectural guarantee that every valid Reference either resolves to an existing Domain Object or reports a well-defined resolution failure.
+
+Reference Integrity is maintained across Runtime and Storage boundaries.
+
+---
+
+## Reference Navigation
+
+Reference Navigation is the Runtime process of traversing a Reference from its source Domain Object to its target Domain Object.
+
+Navigation operates on Object References and is independent of persistence technology.
+
+---
+
+## Reference Resolution
+
+Reference Resolution is the Runtime process of transforming a Reference into an accessible Runtime Object.
+
+The Runtime determines how a Reference is resolved without exposing the underlying implementation mechanism.
+
+---
+
+## Reference Resolution Policy
+
+A Reference Resolution Policy defines the Runtime strategy used to resolve Object References.
+
+Resolution policies are implementation-independent and may include immediate, lazy or deferred resolution.
+
+---
+
+## Reference Source
+
+A Reference Source is the Domain Object that owns a Reference.
+
+The Reference Source establishes the architectural relationship to another Domain Object.
+
+---
+
+## Reference Target
+
+A Reference Target is the Domain Object identified by a Reference.
+
+The Reference Target is resolved by the Runtime using Object Identity.
+
+---
+
+## Resolved Reference
+
+A Resolved Reference is the Runtime result of a successful Reference Resolution.
+
+A Resolved Reference provides access to the target Runtime Object while preserving the architectural semantics of the original Reference.
+
+---
+
 ## Runtime
 
 **Category:** Runtime
@@ -274,6 +410,16 @@ The execution environment responsible for interpreting metadata and executing bu
 
 - Metadata
 - Platform
+
+---
+
+## Runtime Object
+
+A Runtime Object is the executable instance of a Domain Object within the Runtime Environment.
+
+Runtime Objects execute business behavior, maintain runtime state and interact with Runtime Services through published Service Contracts.
+
+Runtime Objects are created according to Metadata definitions.
 
 ---
 
