@@ -1,4 +1,4 @@
-# SS7 Vision
+# AcCore Vision
 
 **Status:** Draft
 
@@ -12,13 +12,13 @@
 >
 > Software should adapt to people rather than requiring people to adapt to software.
 >
-> **SS7 is developed according to that belief.**
+> **AcCore is developed according to that belief.**
 
 ---
 
 # 1. Purpose
 
-This document defines the long-term vision of the SS7 platform.
+This document defines the long-term vision of the AcCore platform.
 
 It describes why the platform exists, the principles that guide its evolution, and the long-term objectives that shape architectural and engineering decisions.
 
@@ -26,7 +26,7 @@ This document is normative.
 
 ---
 
-# 2. Why SS7 Exists
+# 2. Why AcCore Exists
 
 Business software has become increasingly powerful, but also increasingly complex.
 
@@ -34,7 +34,7 @@ Organizations often adapt their business processes to the limitations of softwar
 
 As systems evolve, complexity accumulates, architecture degrades, and maintenance becomes increasingly difficult.
 
-SS7 exists to provide an alternative approach.
+AcCore exists to provide an alternative approach.
 
 Its purpose is to enable business information systems to remain understandable, adaptable, maintainable, and architecturally consistent throughout their lifetime.
 
@@ -42,7 +42,7 @@ Its purpose is to enable business information systems to remain understandable, 
 
 # 3. Vision
 
-SS7 aims to become a platform where business solutions can evolve without sacrificing conceptual simplicity or architectural integrity.
+AcCore aims to become a platform where business solutions can evolve without sacrificing conceptual simplicity or architectural integrity.
 
 The platform is designed to support continuous growth while preserving a clear separation between platform capabilities and business functionality.
 
@@ -52,7 +52,7 @@ Long-term maintainability is considered more valuable than short-term implementa
 
 # 4. Core Values
 
-The evolution of SS7 is guided by the following core values.
+The evolution of AcCore is guided by the following core values.
 
 - Simplicity before complexity.
 - Consistency before convenience.
@@ -65,7 +65,7 @@ The evolution of SS7 is guided by the following core values.
 
 # 5. Long-Term Objectives
 
-The long-term objectives of SS7 are:
+The long-term objectives of AcCore are:
 
 - to maintain a coherent and consistent architecture;
 - to minimize unnecessary complexity;
@@ -78,7 +78,7 @@ The long-term objectives of SS7 are:
 
 # 6. Design Philosophy
 
-SS7 follows a continuous process of learning and improvement.
+AcCore follows a continuous process of learning and improvement.
 
 The project studies existing technologies, architectures, and engineering practices.
 
@@ -86,7 +86,7 @@ Proven ideas are adopted when appropriate.
 
 Adopted ideas are improved whenever meaningful improvements can be justified.
 
-When existing approaches cannot adequately solve a problem, SS7 introduces new ideas.
+When existing approaches cannot adequately solve a problem, AcCore introduces new ideas.
 
 This philosophy is summarized by the principle:
 
@@ -98,7 +98,7 @@ Innovation is driven by necessity rather than novelty.
 
 # 7. People
 
-SS7 is designed for three primary groups.
+AcCore is designed for three primary groups.
 
 ## Business Users
 
@@ -122,7 +122,7 @@ Platform engineers require an architecture capable of evolving for decades witho
 
 # 8. Evolution
 
-SS7 is expected to evolve continuously.
+AcCore is expected to evolve continuously.
 
 New capabilities should extend the platform while preserving its architectural principles.
 
@@ -134,7 +134,7 @@ Backward compatibility is important, but architectural quality remains the prima
 
 # 9. Success Criteria
 
-The success of SS7 is not measured by the number of implemented features.
+The success of AcCore is not measured by the number of implemented features.
 
 Success is measured by the platform's ability to remain:
 
@@ -149,7 +149,7 @@ Success is measured by the platform's ability to remain:
 
 # 10. Final Vision
 
-The ultimate goal of SS7 is not to become the largest business platform.
+The ultimate goal of AcCore is not to become the largest business platform.
 
 Its goal is to become one of the most coherent, understandable, and maintainable platforms for developing business information systems.
 

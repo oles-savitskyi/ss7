@@ -1,4 +1,4 @@
-# SS7 Documentation Standard
+# AcCore Documentation Standard
 
 **Status:** Draft
 
@@ -10,7 +10,7 @@
 
 # 1. Purpose
 
-This document defines the documentation standards used throughout the SS7 project.
+This document defines the documentation standards used throughout the AcCore project.
 
 Its purpose is to ensure that all project documentation remains consistent, maintainable, and suitable as a long-term engineering specification.
 
@@ -20,7 +20,7 @@ This document is normative.
 
 # 2. Documentation Philosophy
 
-Documentation is considered a fundamental component of SS7.
+Documentation is considered a fundamental component of AcCore.
 
 Normative documents define the platform before it is implemented.
 
@@ -48,7 +48,7 @@ Each document shall answer one primary question.
 
 # 4. Document Classification
 
-SS7 documentation is divided into the following categories.
+AcCore documentation is divided into the following categories.
 
 ## Normative Documents
 

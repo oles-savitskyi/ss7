@@ -7,7 +7,7 @@
 
 # 1. Purpose
 
-The Object Factory defines the architectural mechanism responsible for creating Runtime Objects within the SS7 platform.
+The Object Factory defines the architectural mechanism responsible for creating Runtime Objects within the AcCore platform.
 
 The Object Factory transforms Metadata-defined Domain Objects into executable Runtime Objects while preserving architectural separation between Metadata, Runtime and Storage.
 

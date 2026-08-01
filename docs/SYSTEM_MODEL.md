@@ -1,4 +1,4 @@
-# SS7 System Model
+# AcCore System Model
 
 **Status:** Draft
 
@@ -10,9 +10,9 @@
 
 # 1. Purpose
 
-This document defines the conceptual system model of the SS7 platform.
+This document defines the conceptual system model of the AcCore platform.
 
-Its purpose is to describe the relationships between the fundamental concepts defined by the SS7 Glossary and Conceptual Model.
+Its purpose is to describe the relationships between the fundamental concepts defined by the AcCore Glossary and Conceptual Model.
 
 The System Model is independent of implementation technologies and serves as the foundation for the platform architecture.
 
@@ -22,7 +22,7 @@ This document is normative.
 
 # 2. Principles
 
-The SS7 System Model is based on the following principles.
+The AcCore System Model is based on the following principles.
 
 * The model describes concepts rather than implementations.
 * Relationships are more important than implementation details.
@@ -47,7 +47,7 @@ The system consists of the following fundamental entities.
 * Development Environment
 * Business Process
 
-These entities are defined in the SS7 Glossary.
+These entities are defined in the AcCore Glossary.
 
 ---
 
@@ -155,7 +155,7 @@ Configuration ─────── defines ───────► Business Pr
 
 # 6. Layered Model
 
-The conceptual organization of SS7 consists of four layers.
+The conceptual organization of AcCore consists of four layers.
 
 
 Business Layer
@@ -198,7 +198,7 @@ Platform Editions evolve by extending available Platform Capabilities without mo
 
 The System Model defines the conceptual responsibilities of the platform.
 
-The architecture of SS7 shall realize this model without changing its semantics.
+The architecture of AcCore shall realize this model without changing its semantics.
 
 Implementation technologies may evolve, but the conceptual relationships defined by this document should remain stable.
 
@@ -206,7 +206,7 @@ Implementation technologies may evolve, but the conceptual relationships defined
 
 # 9. Final Principle
 
-The architecture of SS7 is derived from the System Model.
+The architecture of AcCore is derived from the System Model.
 
 Implementation follows architecture.
 

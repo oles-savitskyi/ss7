@@ -7,7 +7,7 @@
 
 # 1. Purpose
 
-The Metadata subsystem defines the complete structural description of an SS7 application.
+The Metadata subsystem defines the complete structural description of an AcCore application.
 
 Metadata describes **what the application is**, while the Runtime determines **how the application behaves**.
 
@@ -444,4 +444,4 @@ The Metadata subsystem is architecturally treated as a compiler that transforms 
 
 Runtime subsystems never operate directly on metadata sources or partially constructed metadata objects. Instead, they consume a fully resolved, validated, immutable and published metadata graph.
 
-This one-way dependency is a fundamental architectural principle of SS7.
+This one-way dependency is a fundamental architectural principle of AcCore.

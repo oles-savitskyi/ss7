@@ -1,4 +1,4 @@
-# SS7 Scope
+# AcCore Scope
 
 **Status:** Draft
 
@@ -10,9 +10,9 @@
 
 # 1. Purpose
 
-This document defines the scope of the SS7 platform.
+This document defines the scope of the AcCore platform.
 
-It specifies what SS7 is, what constitutes the platform, and the architectural boundaries within which the platform is designed and evolved.
+It specifies what AcCore is, what constitutes the platform, and the architectural boundaries within which the platform is designed and evolved.
 
 This document establishes the high-level definition of the platform without describing its internal architecture or implementation.
 
@@ -22,17 +22,17 @@ This document is normative.
 
 # 2. Platform Definition
 
-SS7 is a modern configuration-driven platform for developing, executing, and maintaining business information systems.
+AcCore is a modern configuration-driven platform for developing, executing, and maintaining business information systems.
 
 The platform provides reusable capabilities for implementing business solutions, while configurations define business behavior and business processes.
 
-SS7 is designed to provide a consistent architectural foundation for multiple platform editions while allowing configurations to implement diverse business domains without modifying the platform itself.
+AcCore is designed to provide a consistent architectural foundation for multiple platform editions while allowing configurations to implement diverse business domains without modifying the platform itself.
 
 ---
 
 # 3. Design Objectives
 
-The SS7 platform is designed to achieve the following objectives.
+The AcCore platform is designed to achieve the following objectives.
 
 - Simplicity of architecture.
 - Clear separation of responsibilities.
@@ -45,7 +45,7 @@ The SS7 platform is designed to achieve the following objectives.
 
 # 4. Platform Scope
 
-The SS7 platform consists of the following conceptual components.
+The AcCore platform consists of the following conceptual components.
 
 ## 4.1 Core
 
@@ -107,7 +107,7 @@ Documentation is considered an integral component of the platform.
 
 # 5. Platform Editions
 
-SS7 is designed as a family of compatible platform editions.
+AcCore is designed as a family of compatible platform editions.
 
 | Edition          | Purpose                                                                                         |
 |------------------|-------------------------------------------------------------------------------------------------|
@@ -184,4 +184,4 @@ This document should be read together with:
 
 # 10. Final Principle
 
-The SS7 platform evolves through well-defined capabilities while preserving architectural consistency, conceptual simplicity, and long-term maintainability.
+The AcCore platform evolves through well-defined capabilities while preserving architectural consistency, conceptual simplicity, and long-term maintainability.

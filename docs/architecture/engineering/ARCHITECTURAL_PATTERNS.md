@@ -7,7 +7,7 @@
 
 # 1. Purpose
 
-This document describes the recurring architectural patterns used throughout the SS7 platform.
+This document describes the recurring architectural patterns used throughout the AcCore platform.
 
 Unlike subsystem-specific documents, these patterns represent general architectural principles that apply across multiple platform components.
 

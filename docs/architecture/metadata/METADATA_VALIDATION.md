@@ -9,7 +9,7 @@
 
 The Metadata Validation subsystem verifies that the compiled metadata model is structurally and semantically correct before publication.
 
-Validation ensures that every published metadata graph satisfies all architectural constraints defined by the SS7 platform.
+Validation ensures that every published metadata graph satisfies all architectural constraints defined by the AcCore platform.
 
 The Runtime operates exclusively on validated metadata.
 

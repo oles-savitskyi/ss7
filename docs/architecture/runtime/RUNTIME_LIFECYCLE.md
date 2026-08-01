@@ -7,7 +7,7 @@
 
 # 1. Purpose
 
-The Runtime Lifecycle defines the sequence of states through which the SS7 Runtime Environment progresses from creation to termination.
+The Runtime Lifecycle defines the sequence of states through which the AcCore Runtime Environment progresses from creation to termination.
 
 The lifecycle guarantees that Runtime services become available only after the Runtime Environment has been successfully composed, validated and published.
 

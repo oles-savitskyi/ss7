@@ -7,7 +7,7 @@
 
 # 1. Purpose
 
-The Runtime Context defines the complete execution environment for every operation performed within the SS7 Runtime.
+The Runtime Context defines the complete execution environment for every operation performed within the AcCore Runtime.
 
 A Runtime Context encapsulates all information required to execute an operation consistently, securely and deterministically.
 

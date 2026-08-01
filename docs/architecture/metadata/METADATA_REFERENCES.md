@@ -7,7 +7,7 @@
 
 # 1. Purpose
 
-The Metadata References subsystem defines how metadata objects establish logical relationships within the SS7 platform.
+The Metadata References subsystem defines how metadata objects establish logical relationships within the AcCore platform.
 
 While ownership organizes metadata into a hierarchical structure, references create semantic connections between otherwise independent objects.
 

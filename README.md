@@ -1,4 +1,4 @@
-# SS7
+# AcCore
 
 A modern configuration-driven platform
 for building business information systems.

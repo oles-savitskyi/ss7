@@ -7,7 +7,7 @@
 
 # 1. Purpose
 
-The Object Registry defines the architectural mechanism responsible for registering and locating Runtime Objects within the SS7 Runtime Environment.
+The Object Registry defines the architectural mechanism responsible for registering and locating Runtime Objects within the AcCore Runtime Environment.
 
 The Object Registry maintains the association between Object Identity and Runtime Objects.
 

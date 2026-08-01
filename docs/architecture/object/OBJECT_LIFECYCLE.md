@@ -7,7 +7,7 @@
 
 # 1. Purpose
 
-The Object Lifecycle defines the architectural existence of Runtime Objects within the SS7 Runtime Environment.
+The Object Lifecycle defines the architectural existence of Runtime Objects within the AcCore Runtime Environment.
 
 It specifies how Runtime Objects are created, become active and are eventually disposed.
 

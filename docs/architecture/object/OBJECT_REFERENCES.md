@@ -7,7 +7,7 @@
 
 # 1. Purpose
 
-The Object References architecture defines how Domain Objects establish architectural relationships within the SS7 platform.
+The Object References architecture defines how Domain Objects establish architectural relationships within the AcCore platform.
 
 Object References connect Domain Objects while preserving architectural independence between Metadata, Runtime and Storage.
 
@@ -332,4 +332,4 @@ Reference Resolution is performed by the Runtime while preserving architectural 
 | Reference Navigation | Runtime traversal between Domain Objects |
 | Reference Integrity | Ensures architectural consistency |
 
-Together, these responsibilities provide an implementation-independent mechanism for connecting Domain Objects throughout the SS7 platform.
+Together, these responsibilities provide an implementation-independent mechanism for connecting Domain Objects throughout the AcCore platform.

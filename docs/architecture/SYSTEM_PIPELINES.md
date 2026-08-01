@@ -7,7 +7,7 @@
 
 # 1. Purpose
 
-System Pipelines describe the architectural flow of information through the SS7 platform.
+System Pipelines describe the architectural flow of information through the AcCore platform.
 
 Rather than focusing on individual subsystems, this document defines how architectural artifacts are created, transformed, published and consumed across subsystem boundaries.
 

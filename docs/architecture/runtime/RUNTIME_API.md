@@ -7,7 +7,7 @@
 
 # 1. Purpose
 
-The Runtime API defines the public architectural contract between the SS7 Runtime Environment and its consumers.
+The Runtime API defines the public architectural contract between the AcCore Runtime Environment and its consumers.
 
 The Runtime API provides controlled access to Runtime capabilities while hiding the internal implementation of the Runtime Environment.
 

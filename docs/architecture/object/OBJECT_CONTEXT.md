@@ -7,7 +7,7 @@
 
 # 1. Purpose
 
-The Object Context defines the execution environment associated with a Runtime Object within the SS7 platform.
+The Object Context defines the execution environment associated with a Runtime Object within the AcCore platform.
 
 It provides Runtime Objects with controlled access to Runtime services, execution information and environmental parameters while preserving the separation between business logic and infrastructure.
 

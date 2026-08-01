@@ -7,7 +7,7 @@
 
 # 1. Purpose
 
-The Runtime subsystem provides the execution environment in which an SS7 application operates.
+The Runtime subsystem provides the execution environment in which an AcCore application operates.
 
 The Runtime is responsible for hosting platform services, managing their lifecycle, and providing the infrastructure required for application execution.
 
@@ -304,4 +304,4 @@ Runtime Context defines the execution conditions.
 
 Domain Objects implement the business application.
 
-Together these components form the execution architecture of the SS7 platform.
+Together these components form the execution architecture of the AcCore platform.

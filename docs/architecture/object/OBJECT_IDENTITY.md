@@ -7,7 +7,7 @@
 
 # 1. Purpose
 
-The Object Identity architecture defines the immutable identity of Domain Objects within the SS7 platform.
+The Object Identity architecture defines the immutable identity of Domain Objects within the AcCore platform.
 
 Object Identity provides a stable architectural identity shared by all representations of a Domain Object, including Metadata, Runtime and Storage.
 

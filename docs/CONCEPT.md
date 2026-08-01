@@ -1,4 +1,4 @@
-# SS7 Conceptual Model
+# AcCore Conceptual Model
 
 **Status:** Draft
 
@@ -10,7 +10,7 @@
 
 # 1. Purpose
 
-This document defines the conceptual model of the SS7 platform.
+This document defines the conceptual model of the AcCore platform.
 
 Its purpose is to describe the fundamental concepts that constitute the platform and the relationships between them.
 
@@ -22,7 +22,7 @@ This document is normative.
 
 # 2. Overview
 
-SS7 is a configuration-driven platform for developing, executing, and maintaining business information systems.
+AcCore is a configuration-driven platform for developing, executing, and maintaining business information systems.
 
 The platform consists of a set of reusable capabilities that provide infrastructure and services for business solutions.
 
@@ -118,7 +118,7 @@ The Development Environment is part of the Platform.
 
 # 4. Conceptual Relationships
 
-The following relationships define the conceptual structure of SS7.
+The following relationships define the conceptual structure of AcCore.
 
 ## Platform Structure
 
@@ -153,7 +153,7 @@ The following relationships define the conceptual structure of SS7.
 
 # 5. Layered Conceptual View
 
-SS7 is conceptually organized into the following layers.
+AcCore is conceptually organized into the following layers.
 
 Business Layer
     │
@@ -178,7 +178,7 @@ Fundamental architectural responsibilities belong to the Core.
 
 # 6. Conceptual Principles
 
-The conceptual model of SS7 is governed by the following principles.
+The conceptual model of AcCore is governed by the following principles.
 
 * The Platform provides capabilities.
 * Configurations provide business functionality.
@@ -194,7 +194,7 @@ The conceptual model of SS7 is governed by the following principles.
 
 # 7. Evolution Model
 
-The SS7 platform evolves through the introduction of new capabilities while preserving conceptual consistency.
+The AcCore platform evolves through the introduction of new capabilities while preserving conceptual consistency.
 
 New business requirements should be satisfied through Configurations whenever possible.
 
@@ -208,4 +208,4 @@ The Core evolves only when required to support the long-term development of the 
 
 The conceptual integrity of the platform is more important than the accumulation of features.
 
-Every new concept introduced into SS7 should have a clear responsibility, a clear relationship to existing concepts, and a clear justification for its existence.
+Every new concept introduced into AcCore should have a clear responsibility, a clear relationship to existing concepts, and a clear justification for its existence.

@@ -7,7 +7,7 @@
 
 # 1. Purpose
 
-The Metadata Object Model defines the universal structural model used to represent every metadata element within the SS7 platform.
+The Metadata Object Model defines the universal structural model used to represent every metadata element within the AcCore platform.
 
 All metadata objects share a common architectural foundation regardless of their functional purpose.
 

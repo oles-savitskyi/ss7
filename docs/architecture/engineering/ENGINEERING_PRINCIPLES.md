@@ -1,4 +1,4 @@
-# SS7 Engineering Principles
+# AcCore Engineering Principles
 
 **Status:** Draft
 
@@ -14,13 +14,13 @@ Programming languages evolve. Frameworks change. Databases are replaced. User in
 
 Sound engineering principles remain valuable throughout the lifetime of a platform.
 
-SS7 is developed according to that belief.
+AcCore is developed according to that belief.
 
 ---
 
 # 1. Purpose
 
-This document defines the engineering principles that guide the design, development, and evolution of SS7.
+This document defines the engineering principles that guide the design, development, and evolution of AcCore.
 
 These principles apply to every architectural decision, platform component, configuration, and development activity within the project.
 
@@ -32,7 +32,7 @@ This document is normative.
 
 # 2. Engineering Philosophy
 
-SS7 is developed according to the belief that long-term architectural quality is achieved through careful design rather than accidental evolution.
+AcCore is developed according to the belief that long-term architectural quality is achieved through careful design rather than accidental evolution.
 
 The project values clarity over complexity, reasoning over convention, and consistency over short-term convenience.
 
@@ -52,13 +52,13 @@ No functionality shall exist solely because similar functionality exists in anot
 
 ## 3.2 Study – Adopt – Improve – Innovate
 
-SS7 continuously studies existing software systems and engineering practices.
+AcCore continuously studies existing software systems and engineering practices.
 
 When appropriate, proven ideas are adopted.
 
 Whenever possible, adopted ideas are improved.
 
-When existing solutions cannot adequately solve a problem, SS7 introduces new ideas.
+When existing solutions cannot adequately solve a problem, AcCore introduces new ideas.
 
 Innovation is driven by necessity rather than novelty.
 
@@ -130,7 +130,7 @@ The platform should reduce unnecessary complexity rather than expose it.
 
 ## 3.10 Continuous Improvement
 
-Every part of SS7 may be improved whenever a demonstrably better solution is identified.
+Every part of AcCore may be improved whenever a demonstrably better solution is identified.
 
 Backward compatibility is important, but architectural quality has higher priority than preserving historical limitations.
 
@@ -155,7 +155,7 @@ If any answer is negative, the decision shall be reconsidered.
 
 # 5. Engineering Culture
 
-SS7 encourages constructive technical discussion.
+AcCore encourages constructive technical discussion.
 
 Engineering decisions are evaluated by their technical quality rather than by personal preference.
 
@@ -169,7 +169,7 @@ Architectural quality is achieved through continuous review, not through inflexi
 
 # 6. Engineering Goal
 
-The goal of SS7 is not to reproduce existing software.
+The goal of AcCore is not to reproduce existing software.
 
 The goal is to create a platform that is simpler, more consistent, easier to understand, and more enjoyable to use than existing alternatives.
 
@@ -179,4 +179,4 @@ Every engineering decision should contribute toward that objective.
 
 # 7. Final Principle
 
-The success of SS7 is measured not by the amount of implemented functionality, but by the quality, consistency, and longevity of its architecture.
+The success of AcCore is measured not by the amount of implemented functionality, but by the quality, consistency, and longevity of its architecture.

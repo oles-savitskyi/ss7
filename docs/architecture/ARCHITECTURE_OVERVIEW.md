@@ -1,4 +1,4 @@
-# SS7 Architecture Overview
+# AcCore Architecture Overview
 
 **Status:** Draft
 
@@ -10,7 +10,7 @@
 
 # 1. Purpose
 
-This document provides a high-level overview of the SS7 architecture.
+This document provides a high-level overview of the AcCore architecture.
 
 Its purpose is to identify the major architectural subsystems of the platform and define their responsibilities.
 
@@ -22,7 +22,7 @@ This document is normative.
 
 # 2. Architectural Principles
 
-The architecture of SS7 is derived from the System Model.
+The architecture of AcCore is derived from the System Model.
 
 Every subsystem exists to realize one or more conceptual relationships defined by the System Model.
 
@@ -36,9 +36,9 @@ Architectural integrity takes precedence over implementation convenience.
 
 # 3. Architectural View
 
-At the highest level, SS7 consists of a set of cooperating architectural subsystems.
+At the highest level, AcCore consists of a set of cooperating architectural subsystems.
 
-                     SS7 Platform
+                     AcCore Platform
                            │
     ┌──────────────────────┼──────────────────────┐
     │                      │                      │
@@ -178,8 +178,8 @@ Architectural consistency is considered more important than minimizing the numbe
 
 # 9. Final Principle
 
-The architecture of SS7 is organized as a composition of independent, cooperating subsystems.
+The architecture of AcCore is organized as a composition of independent, cooperating subsystems.
 
 Each subsystem has a single primary responsibility.
 
-Together they realize the conceptual model defined by the SS7 System Model while preserving the architectural principles established by the project.
+Together they realize the conceptual model defined by the AcCore System Model while preserving the architectural principles established by the project.

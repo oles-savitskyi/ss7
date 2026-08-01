@@ -7,7 +7,7 @@
 
 # 1. Purpose
 
-The Object Architecture defines how business entities are represented throughout the SS7 platform.
+The Object Architecture defines how business entities are represented throughout the AcCore platform.
 
 It establishes the architectural model connecting Metadata, Runtime and Storage by defining the lifecycle and representation of Domain Objects.
 

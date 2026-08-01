@@ -7,7 +7,7 @@
 
 # 1. Purpose
 
-The Object Behavior architecture defines how Domain Objects perform business operations within the SS7 platform.
+The Object Behavior architecture defines how Domain Objects perform business operations within the AcCore platform.
 
 Object Behavior encapsulates business semantics while remaining independent of Runtime infrastructure, Storage mechanisms and implementation details.
 

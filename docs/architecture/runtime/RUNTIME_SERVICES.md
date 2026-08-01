@@ -7,7 +7,7 @@
 
 # 1. Purpose
 
-Runtime Services provide the platform functionality required by the SS7 Runtime Environment.
+Runtime Services provide the platform functionality required by the AcCore Runtime Environment.
 
 Each Runtime Service is responsible for a single architectural concern and publishes one or more Service Contracts through which it interacts with the rest of the platform.
 

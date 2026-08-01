@@ -9,7 +9,7 @@
 
 This document is reserved for the future architecture of the Metadata Semantic Analysis subsystem.
 
-At the current stage of the SS7 architecture, semantic analysis is performed as part of the Metadata Validation process.
+At the current stage of the AcCore architecture, semantic analysis is performed as part of the Metadata Validation process.
 
 As the platform evolves, semantic analysis may become an independent architectural subsystem responsible for extracting semantic knowledge from the compiled metadata model.
 

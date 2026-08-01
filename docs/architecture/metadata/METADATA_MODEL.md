@@ -1,4 +1,4 @@
-# SS7 Metadata Model
+# AcCore Metadata Model
 
 **Status:** Draft
 
@@ -10,7 +10,7 @@
 
 # 1. Purpose
 
-This document defines the conceptual model of metadata in the SS7 platform.
+This document defines the conceptual model of metadata in the AcCore platform.
 
 Its purpose is to describe the fundamental concepts from which all business information systems are constructed.
 

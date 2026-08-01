@@ -1,4 +1,4 @@
-# SS7 Glossary
+# AcCore Glossary
 
 **Status:** Draft
 
@@ -10,11 +10,11 @@
 
 # 1. Purpose
 
-This document defines the official terminology of the SS7 platform.
+This document defines the official terminology of the AcCore platform.
 
 Its purpose is to establish a consistent vocabulary for all architectural, engineering, and user documentation.
 
-Every architectural term used within the SS7 project shall have a single normative definition.
+Every architectural term used within the AcCore project shall have a single normative definition.
 
 This document is normative.
 
@@ -22,9 +22,9 @@ This document is normative.
 
 # 2. Scope
 
-This glossary defines concepts that belong specifically to the SS7 platform.
+This glossary defines concepts that belong specifically to the AcCore platform.
 
-General software engineering terminology and implementation technologies are outside the scope of this document unless they acquire a specific meaning within SS7.
+General software engineering terminology and implementation technologies are outside the scope of this document unless they acquire a specific meaning within AcCore.
 
 ---
 
@@ -44,6 +44,16 @@ Terms are listed in alphabetical order.
 
 # 4. Terms
 
+## Accumulation Register
+
+A register that stores business movements affecting balances and accumulated values.
+
+Accumulation Registers consist of movement records and totals. Movements represent historical business events, while totals provide optimized access to balances.
+
+Examples include inventory balances, cash balances, accounts receivable and accounts payable.
+
+---
+
 ## Architecture
 
 **Category:** Foundation
@@ -52,7 +62,7 @@ Terms are listed in alphabetical order.
 
 **Definition**
 
-The fundamental organization of the SS7 platform, including its concepts, principles, components, relationships, and evolution.
+The fundamental organization of the AcCore platform, including its concepts, principles, components, relationships, and evolution.
 
 **See also**
 
@@ -135,7 +145,7 @@ A Contract is independent of any particular implementation technology or program
 
 **Definition**
 
-The common architectural foundation shared by every SS7 platform edition.
+The common architectural foundation shared by every AcCore platform edition.
 
 **See also**
 
@@ -152,7 +162,7 @@ The common architectural foundation shared by every SS7 platform edition.
 
 **Definition**
 
-The set of tools used to create, maintain, test, and deploy SS7 configurations.
+The set of tools used to create, maintain, test, and deploy AcCore configurations.
 
 **See also**
 
@@ -163,11 +173,27 @@ The set of tools used to create, maintain, test, and deploy SS7 configurations.
 
 ## Domain Object
 
-A Domain Object is the architectural representation of a business entity within the SS7 platform.
+A Domain Object is the architectural representation of a business entity within the AcCore platform.
 
 Domain Objects encapsulate business state, behavior and relationships while executing within the Runtime Environment.
 
 A Domain Object is defined by Metadata and exists as a Runtime Object during execution.
+
+---
+
+## EAV (Entity-Attribute-Value)
+
+A storage model used to persist user-defined fields without requiring schema modifications.
+
+In AcCore, EAV is an implementation detail of the Storage subsystem and remains transparent to Runtime and Metadata.
+
+---
+
+## Information Register
+
+A register that stores business information that does not represent accumulation.
+
+Information Registers may be periodic or non-periodic and typically store facts such as exchange rates, prices, tax rates or configuration data.
 
 ---
 
@@ -178,6 +204,24 @@ An Interface is a programming-language construct used to implement one or more a
 An Interface is an implementation detail.
 
 The architecture specifies Contracts rather than language-specific interfaces.
+
+---
+
+## Logical Field
+
+A field as perceived by Metadata and Runtime.
+
+A Logical Field is independent of its physical persistence mechanism and may be stored in primary storage, EAV storage or future storage implementations.
+
+---
+
+## Logical Field Model
+
+The architectural principle stating that Metadata and Runtime interact only with Logical Fields.
+
+Storage is responsible for determining how fields are physically persisted.
+
+Physical storage details remain hidden from Runtime.
 
 ---
 
@@ -197,6 +241,22 @@ Metadata defines what a configuration contains rather than how the platform is i
 
 - Configuration
 - Runtime
+
+---
+
+## Metadata Field
+
+A field defined by Metadata as part of a business object structure.
+
+Metadata Fields specify field names, types, semantics, constraints and other properties required by the platform.
+
+---
+
+## Money
+
+A Platform Type representing monetary values.
+
+Money is always interpreted together with Currency metadata, which defines scale, precision and currency-specific rules.
 
 ---
 
@@ -249,6 +309,14 @@ Object References are resolved by the Runtime during execution.
 Object State is the complete set of mutable values associated with a Runtime Object at a particular moment in time.
 
 Object State changes during execution while Object Identity remains unchanged.
+
+---
+
+## Persistent Entity
+
+A Storage Entity that possesses identity and participates in persistence lifecycle operations such as creation, update, versioning and deletion.
+
+Catalogs, Documents, Registers, Constants and Sequences are Persistent Entities.
 
 ---
 
@@ -306,13 +374,33 @@ A reusable service provided by the platform and available to all configurations 
 
 **Definition**
 
-A specific distribution of the SS7 platform that provides a defined set of platform capabilities while sharing the common architectural Core.
+A specific distribution of the AcCore platform that provides a defined set of platform capabilities while sharing the common architectural Core.
 
 **See also**
 
 - Platform
 - Core
 - Configuration
+
+---
+
+## Platform Type
+
+A logical type defined by the AcCore Platform Type System.
+
+Platform Types are independent of Storage Provider implementations and provide consistent behavior across the platform.
+
+Examples include String, Integer, Boolean, Date, DateTime, Money, Quantity and Reference.
+
+---
+
+## Posting Engine
+
+A Runtime subsystem responsible for transforming posted documents into register movements.
+
+The Posting Engine defines business logic for movement generation and register updates.
+
+Storage does not perform posting logic.
 
 ---
 
@@ -332,6 +420,14 @@ Examples include:
 
 ---
 
+## Quantity
+
+A Platform Type representing measurable quantities.
+
+Quantity values are interpreted together with Measure Unit metadata, which defines precision, scale and measurement rules.
+
+---
+
 ## Reference Cardinality
 
 Reference Cardinality defines how many target Domain Objects may be associated with a single Reference Source.
@@ -345,6 +441,14 @@ Typical cardinalities include one-to-one, one-to-many and many-to-many relations
 Reference Integrity is the architectural guarantee that every valid Reference either resolves to an existing Domain Object or reports a well-defined resolution failure.
 
 Reference Integrity is maintained across Runtime and Storage boundaries.
+
+---
+
+## Reference Model
+
+The platform-wide mechanism used to represent relationships between business objects.
+
+All references are based on ULID identities and remain independent of business numbers, names or physical storage identifiers.
 
 ---
 
@@ -423,6 +527,24 @@ Runtime Objects are created according to Metadata definitions.
 
 ---
 
+## Scalar Storage Entity
+
+A Storage Entity that stores a single logical value rather than tabular data.
+
+Examples include Constants and Sequences.
+
+---
+
+## Semantic Field
+
+A Metadata Field associated with predefined platform meaning.
+
+Semantic Fields allow Runtime and platform services to provide specialized behavior while remaining independent of physical storage.
+
+Examples include CODE, BARCODE, EMAIL, PHONE and URL.
+
+---
+
 ## Service Contract
 
 A Service Contract is the published architectural specification of a Runtime Service.
@@ -455,3 +577,65 @@ The Standard Configuration uses only public platform capabilities.
 
 - Configuration
 - Platform
+
+---
+
+## Storage Entity
+
+The logical persistence representation of a business object inside the Storage subsystem.
+
+Storage Entities define how objects participate in persistence independently of Runtime behavior.
+
+---
+
+## Storage Optimizer
+
+A subsystem responsible for adaptive optimization of physical storage structures.
+
+Examples include automatic totals granularity selection, adaptive indexing and future storage optimizations.
+
+Storage Optimizer must preserve identical logical behavior.
+
+---
+
+## Storage Provider
+
+A concrete implementation of the Storage subsystem.
+
+Examples may include SQLite, PostgreSQL or future storage backends.
+
+Storage Providers must preserve the logical behavior defined by the platform architecture.
+
+---
+
+## Table Storage Entity
+
+A Storage Entity representing tabular business data.
+
+Catalogs, Documents and Registers are examples of Table Storage Entities.
+
+---
+
+## Totals Engine
+
+A subsystem responsible for maintaining and rebuilding register totals.
+
+Totals Engine operates on top of movement history and ensures consistency between movements and totals.
+
+---
+
+## ULID (Universally Unique Lexicographically Sortable Identifier)
+
+The platform-wide identity format used by AcCore.
+
+ULIDs provide globally unique object identities while preserving chronological ordering characteristics.
+
+ULID values are independent of Storage Providers and business numbering systems.
+
+---
+
+## User-defined Field
+
+A field introduced by configuration or end users to extend business objects without modifying platform architecture.
+
+User-defined Fields are typically persisted through the EAV model and participate in the Logical Field Model.

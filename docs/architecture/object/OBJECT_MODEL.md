@@ -7,7 +7,7 @@
 
 # 1. Purpose
 
-The Object Model defines the internal architectural structure of Domain Objects within the SS7 platform.
+The Object Model defines the internal architectural structure of Domain Objects within the AcCore platform.
 
 It establishes the common architectural composition shared by all object categories, independently of their business purpose or implementation technology.
 

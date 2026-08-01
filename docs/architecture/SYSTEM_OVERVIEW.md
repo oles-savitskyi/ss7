@@ -7,17 +7,17 @@
 
 # 1. Purpose
 
-This document provides a high-level architectural overview of the SS7 platform as an integrated system.
+This document provides a high-level architectural overview of the AcCore platform as an integrated system.
 
 Unlike subsystem-specific documents, the System Overview focuses on how the major architectural subsystems cooperate to provide a coherent execution environment.
 
-The purpose of this document is to present the overall architectural picture of SS7 rather than the internal details of individual components.
+The purpose of this document is to present the overall architectural picture of AcCore rather than the internal details of individual components.
 
 ---
 
 # 2. Architectural Vision
 
-SS7 is a model-driven enterprise application platform.
+AcCore is a model-driven enterprise application platform.
 
 Every major subsystem is defined by explicit architectural models.
 

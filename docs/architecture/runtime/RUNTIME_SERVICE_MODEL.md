@@ -7,7 +7,7 @@
 
 # 1. Purpose
 
-The Runtime Service Model defines the architectural representation of services within the SS7 Runtime.
+The Runtime Service Model defines the architectural representation of services within the AcCore Runtime.
 
 Services are the fundamental building blocks of the Runtime Environment.
 
