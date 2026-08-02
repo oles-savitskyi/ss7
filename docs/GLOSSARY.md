@@ -154,6 +154,16 @@ The common architectural foundation shared by every AcCore platform edition.
 
 ---
 
+### Dependency Graph
+
+A directed graph describing influence relationships between posted objects.
+
+Dependency Graph is used to identify affected objects, support consistency analysis, and determine reposting scope after accounting data changes.
+
+Dependencies are established through register participation rather than direct document-to-document relationships.
+
+---
+
 ## Development Environment
 
 **Category:** Platform
@@ -168,6 +178,16 @@ The set of tools used to create, maintain, test, and deploy AcCore configuration
 
 - Configuration
 - Platform
+
+---
+
+### Dirty Object
+
+A posted object whose accounting consistency may be affected by external changes.
+
+A Dirty Object is marked with the DIRTY consistency state and may require reposting or other consistency restoration procedures.
+
+Being marked DIRTY does not necessarily indicate incorrect accounting data, only that consistency can no longer be guaranteed.
 
 ---
 
@@ -257,6 +277,24 @@ Metadata Fields specify field names, types, semantics, constraints and other pro
 A Platform Type representing monetary values.
 
 Money is always interpreted together with Currency metadata, which defines scale, precision and currency-specific rules.
+
+---
+
+### Movement
+
+The atomic accounting record generated during posting.
+
+A Movement represents a change applied to a register and contains dimensions, resources, attributes, period information, and other accounting data required by the target register.
+
+Movements are validated before persistence.
+
+---
+
+### MovementSet
+
+A collection of movements generated during a single posting operation.
+
+MovementSet is the primary output of a Posting Handler and serves as the input to movement validation and persistence processes.
 
 ---
 
@@ -394,13 +432,45 @@ Examples include String, Integer, Boolean, Date, DateTime, Money, Quantity and R
 
 ---
 
+### Posting
+
+The process of transforming a business object into register movements and applying its accounting effects to the system.
+
+Posting is executed by the Posting Engine through Posting Handlers and results in validated and persisted movements.
+
+---
+
+### Posting Context
+
+A controlled runtime environment provided to Posting Handlers during posting execution.
+
+Posting Context provides access to the current document, metadata, runtime services, registers, queries, references, user information, session information, and platform time.
+
+Posting Context acts as the integration boundary between posting logic and platform services.
+
+---
+
 ## Posting Engine
 
-A Runtime subsystem responsible for transforming posted documents into register movements.
+The central orchestration component of the Posting Architecture.
 
-The Posting Engine defines business logic for movement generation and register updates.
+The Posting Engine coordinates the posting lifecycle, resolves Posting Handlers, creates Posting Contexts, validates generated movements, coordinates persistence, updates totals, manages dependency integration, and publishes posting events.
 
-Storage does not perform posting logic.
+The Posting Engine does not contain business-specific accounting logic.
+
+Business logic is implemented by Posting Handlers.
+
+Storage is responsible only for movement persistence and does not perform posting logic.
+
+---
+
+### Posting Handler
+
+A component responsible for generating movements for a specific business object.
+
+Posting Handlers contain business-specific posting logic and transform document data into a MovementSet.
+
+Posting Handlers do not perform persistence, transaction management, totals updates, or dependency management.
 
 ---
 
@@ -639,3 +709,23 @@ ULID values are independent of Storage Providers and business numbering systems.
 A field introduced by configuration or end users to extend business objects without modifying platform architecture.
 
 User-defined Fields are typically persisted through the EAV model and participate in the Logical Field Model.
+
+
+
+### Register Posting Contract
+
+A metadata-driven specification defining the requirements that movements must satisfy before they can be accepted by a register.
+
+A Register Posting Contract may define required dimensions, resources, attributes, movement types, data types, and validation rules.
+
+Register Posting Contracts form the integration boundary between Posting Architecture and Register Architecture.
+
+---
+
+### Reposting
+
+The process of rebuilding accounting effects for an already posted object.
+
+Reposting typically consists of removing existing movements and generating a new MovementSet based on the current object state.
+
+Reposting is used to restore accounting consistency after modifications or dependency changes.
