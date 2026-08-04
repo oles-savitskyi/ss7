@@ -71,6 +71,37 @@ The fundamental organization of the AcCore platform, including its concepts, pri
 
 ---
 
+## Adaptive Totals Strategy
+
+A Totals Engine strategy that allows totals storage granularity to vary according to workload and data volume.
+
+Supported granularities include:
+
+Yearly
+Quarterly
+Monthly
+Daily
+
+---
+
+## Balance
+
+An aggregated representation of register resources for a specific dimension set and point in time.
+
+Balances are derived data maintained by the Totals Engine.
+
+Balances are not primary facts.
+
+---
+
+## Balance Query
+
+A Register Query that retrieves register state and answers the question:
+
+"What is the state?"
+
+---
+
 ## Business Process
 
 **Category:** Business
@@ -280,21 +311,60 @@ Money is always interpreted together with Currency metadata, which defines scale
 
 ---
 
-### Movement
+## Movement
 
-The atomic accounting record generated during posting.
+A business fact stored within an Accumulation Register.
 
-A Movement represents a change applied to a register and contains dimensions, resources, attributes, period information, and other accounting data required by the target register.
+A Movement represents a change applied to register resources and is the primary source of balances and turnovers.
 
-Movements are validated before persistence.
+Movements are generated during posting, validated according to register contracts, and persisted through Register Services.
+
+A Movement may contain dimensions, resources, attributes, period information, and other register-specific data required by the target register.
 
 ---
+
+## MovementChanged
+
+A Register Event indicating that an existing movement has been modified.
+
+## MovementCreated
+
+A Register Event indicating that a new movement has been stored.
+
+## MovementDeleted
+
+A Register Event indicating that an existing movement has been removed.
+
+## Movement Query
+
+A Register Query that retrieves movements and answers the question:
+
+"What happened?"
+
+## Movement Service
+
+A Register service responsible for storing, retrieving, and managing movements.
+
+Movement Service provides the interface between Posting Architecture and register storage.
 
 ### MovementSet
 
 A collection of movements generated during a single posting operation.
 
 MovementSet is the primary output of a Posting Handler and serves as the input to movement validation and persistence processes.
+
+---
+
+## Movement Type
+
+A movement classification defining the direction of resource change.
+
+Supported movement types are:
+
+INCOME
+EXPENSE
+
+Movement direction is determined exclusively by movement_type.
 
 ---
 
@@ -498,6 +568,14 @@ Quantity values are interpreted together with Measure Unit metadata, which defin
 
 ---
 
+## Query Service
+
+A Register service responsible for executing register queries.
+
+Query Service provides movement, balance, and turnover queries while hiding storage implementation details.
+
+---
+
 ## Reference Cardinality
 
 Reference Cardinality defines how many target Domain Objects may be associated with a single Reference Source.
@@ -559,6 +637,114 @@ The Reference Source establishes the architectural relationship to another Domai
 A Reference Target is the Domain Object identified by a Reference.
 
 The Reference Target is resolved by the Runtime using Object Identity.
+
+---
+
+## Register
+
+A metadata-defined structure used to store and organize business facts.
+
+Registers provide persistent storage, aggregation, querying, and dependency participation within the platform.
+
+AcCore supports Information Registers and Accumulation Registers.
+
+Information Register
+
+A register type used to store informational business facts.
+
+Information Registers support historical tracking, versioning, temporal queries, and source traceability.
+
+Information Registers do not participate in accumulation.
+
+Accumulation Register
+
+A register type used to store accounting movements representing business facts.
+
+Accumulation Registers are the source of balances and turnovers.
+
+Balances and turnovers are derived from movements.
+
+---
+
+## Register Event
+
+An infrastructure event describing changes in register facts or register state.
+
+Register Events do not contain business logic.
+
+---
+
+## Register Lifecycle
+
+The sequence of runtime stages through which a register progresses during its existence.
+
+The lifecycle includes compilation, registration, initialization, operation, maintenance, and shutdown.
+
+---
+
+## Register Manager
+
+A Runtime service responsible for registration, initialization, lifecycle management, and discovery of register definitions.
+
+Register Manager manages register participation in the Runtime Architecture.
+
+---
+
+## Register Query
+
+A request for register information executed through the Register Query Model.
+
+Register Queries are independent of storage layout and aggregation implementation details.
+
+---
+
+## Register Record
+
+A persistent fact stored within a register.
+
+A register record may contain dimensions, resources, attributes, identity information, version information, and source information depending on the register type.
+
+---
+
+## Rebuild Service
+
+A Register service responsible for maintenance operations including totals reconstruction, recovery, migration, and consistency verification.
+
+---
+
+## Register State
+
+The current aggregated state of a register as exposed through register services.
+
+Register State is the primary dependency unit used by the Dependency Graph.
+
+---
+
+## RegisterChanged
+
+A Register Event indicating that the state of a register has changed.
+
+This event serves as the primary integration point with the Dependency Graph.
+
+---
+
+### Register Posting Contract
+
+A metadata-driven specification defining the requirements that movements must satisfy before they can be accepted by a register.
+
+A Register Posting Contract may define required dimensions, resources, attributes, movement types, data types, and validation rules.
+
+Register Posting Contracts form the integration boundary between Posting Architecture and Register Architecture.
+
+---
+
+### Reposting
+
+The process of rebuilding accounting effects for an already posted object.
+
+Reposting typically consists of removing existing movements and generating a new MovementSet based on the current object state.
+
+Reposting is used to restore accounting consistency after modifications or dependency changes.
 
 ---
 
@@ -686,11 +872,67 @@ Catalogs, Documents and Registers are examples of Table Storage Entities.
 
 ---
 
+## Temporal Query
+
+A query executed relative to a specified point in time.
+
+Temporal Queries allow reconstruction of historical register state.
+
+---
+
 ## Totals Engine
 
-A subsystem responsible for maintaining and rebuilding register totals.
+A Runtime subsystem responsible for maintaining aggregated register state derived from movements.
 
-Totals Engine operates on top of movement history and ensures consistency between movements and totals.
+The Totals Engine manages balance calculation, totals storage, adaptive aggregation strategies, and totals rebuild operations.
+
+The Totals Engine ensures consistency between movements and aggregated register state.
+
+The Totals Engine does not perform posting, valuation, reporting, or business logic.
+
+---
+
+## Totals Bucket
+
+An aggregated totals record representing accumulated resource changes for a specific period bucket and dimension set.
+
+Totals Buckets are used by the Totals Engine to calculate balances.
+
+---
+
+## Totals Service
+
+A Register service responsible for maintaining and accessing totals data.
+
+Totals Service manages totals updates and adaptive aggregation strategies.
+
+---
+
+## TotalsUpdated
+
+A Register Event indicating that register totals have been updated.
+
+---
+
+## TotalsRebuilt
+
+A Register Event indicating that register totals have been rebuilt.
+
+---
+
+## Turnover
+
+An aggregated representation of resource changes during a specified period.
+
+Turnovers are derived from movements and may be materialized as a performance optimization.
+
+---
+
+## Turnover Query
+
+A Register Query that retrieves aggregated resource changes and answers the question:
+
+"What changed during a period?"
 
 ---
 
@@ -712,20 +954,3 @@ User-defined Fields are typically persisted through the EAV model and participat
 
 
 
-### Register Posting Contract
-
-A metadata-driven specification defining the requirements that movements must satisfy before they can be accepted by a register.
-
-A Register Posting Contract may define required dimensions, resources, attributes, movement types, data types, and validation rules.
-
-Register Posting Contracts form the integration boundary between Posting Architecture and Register Architecture.
-
----
-
-### Reposting
-
-The process of rebuilding accounting effects for an already posted object.
-
-Reposting typically consists of removing existing movements and generating a new MovementSet based on the current object state.
-
-Reposting is used to restore accounting consistency after modifications or dependency changes.
