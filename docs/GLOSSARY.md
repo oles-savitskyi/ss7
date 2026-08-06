@@ -954,3 +954,294 @@ User-defined Fields are typically persisted through the EAV model and participat
 
 
 
+
+
+## Valuation Architecture Terms
+
+### Valuation
+
+The process of determining, maintaining, adjusting, and reporting economic value associated with quantity-carrying business objects.
+
+Valuation is independent from quantity accounting but operates on the same economic objects.
+
+---
+
+### Valuation Engine
+
+A subsystem responsible for producing valuation results from valuation facts.
+
+Responsibilities:
+
+* layer processing;
+* valuation method execution;
+* adjustment processing;
+* allocation processing;
+* cost movement generation.
+
+Valuation Engine does not maintain cost balances.
+
+---
+
+### Cost Totals Engine
+
+A subsystem responsible for maintaining materialized valuation totals.
+
+Responsibilities:
+
+* cost balance maintenance;
+* balance rebuilding;
+* balance verification.
+
+Input:
+
+```text id="g1q9wa"
+CostMovement
+```
+
+Output:
+
+```text id="n3v7zb"
+CostBalance
+```
+
+---
+
+### Valuation Method
+
+A strategy used to determine which valuation layers are consumed by a quantity consumption event.
+
+Examples:
+
+```text id="h5r2mt"
+FIFO
+
+LIFO
+
+Weighted Average
+```
+
+Valuation methods produce valuation consumptions.
+
+---
+
+### Valuation Key
+
+A dimensional identifier used by the valuation subsystem.
+
+According to Valuation Architecture:
+
+```text id="x6p8dk"
+Valuation Key
+=
+Quantity Key
+```
+
+Valuation does not introduce independent dimensional models.
+
+---
+
+### Valuation Layer
+
+A valuation fact representing ownership of quantity and associated value.
+
+A valuation layer is the primary carrier of cost ownership.
+
+A valuation layer may participate in:
+
+* valuation consumptions;
+* valuation adjustments.
+
+---
+
+### Valuation Consumption
+
+A valuation fact representing explicit consumption of a valuation layer.
+
+Valuation consumptions are produced by valuation methods.
+
+Valuation consumption preserves valuation provenance and layer usage history.
+
+---
+
+### Valuation Adjustment
+
+A valuation fact representing a change in layer valuation.
+
+Examples:
+
+* delayed cost;
+* transportation cost;
+* customs cost;
+* supplier correction;
+* revaluation.
+
+All valuation corrections are represented through adjustments.
+
+---
+
+### Valuation Allocation
+
+A valuation fact representing explicit distribution of a valuation adjustment.
+
+Valuation allocations connect valuation adjustments with their targets.
+
+Supported targets:
+
+```text id="p8k4sv"
+Consumption
+
+Remaining Layer
+```
+
+---
+
+### Cost Movement
+
+A materialized valuation fact representing a change in economic value.
+
+Cost movements are produced by the Valuation Engine.
+
+Cost movements are the source of valuation totals.
+
+---
+
+### Cost Balance
+
+A materialized valuation total representing accumulated economic value.
+
+Cost balances are maintained by the Cost Totals Engine.
+
+Cost balances are rebuildable from cost movements.
+
+---
+
+### Effective Cost
+
+The effective value of a valuation layer after applying all adjustments.
+
+Definition:
+
+```text id="r4t6wy"
+Effective Cost =
+Base Cost +
+Σ Adjustments
+```
+
+---
+
+### Base Cost
+
+The initial value assigned to a valuation layer at creation time.
+
+Base cost may subsequently be modified through valuation adjustments.
+
+---
+
+### Delayed Cost
+
+A valuation fact that becomes known after the associated quantity fact.
+
+Delayed costs are represented through valuation adjustments.
+
+Examples:
+
+* transportation invoices;
+* customs invoices;
+* supplier corrections;
+* post-factum expenses.
+
+---
+
+### Cost Provenance
+
+The ability to trace the origin and evolution of valuation results.
+
+Cost provenance is provided through:
+
+```text id="v7m3ac"
+ValuationLayer
+        ↓
+ValuationConsumption
+        ↓
+ValuationAdjustment
+        ↓
+ValuationAllocation
+        ↓
+CostMovement
+```
+
+---
+
+### Valuation Facts
+
+Immutable valuation history used as the source of truth.
+
+Valuation facts include:
+
+```text id="z2k8nr"
+ValuationLayer
+
+ValuationConsumption
+
+ValuationAdjustment
+```
+
+These facts are sufficient to reconstruct valuation state.
+
+---
+
+### Materialized Valuation Artifacts
+
+Derived valuation structures maintained for performance.
+
+Artifacts include:
+
+```text id="m5x1pd"
+ValuationAllocation
+
+CostMovement
+
+CostBalance
+```
+
+Materialized artifacts are rebuildable.
+
+---
+
+### Valuation Rebuild
+
+The process of reconstructing valuation state from valuation facts.
+
+Rebuild operations may target:
+
+* allocations;
+* cost movements;
+* cost balances;
+* complete valuation state.
+
+---
+
+### Valuation Resource
+
+An economic measure maintained by the valuation subsystem.
+
+The standard valuation resource is:
+
+```text id="d8w4ul"
+Money
+```
+
+Future implementations may introduce additional valuation resources while preserving the same valuation model.
+
+---
+
+### Quantity-Cost Consistency
+
+Architectural principle stating:
+
+```text id="a6v9rb"
+Everything That Has Quantity
+Must Have Value
+```
+
+Valuation dimensions are inherited from quantity accounting dimensions.
