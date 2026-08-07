@@ -34,22 +34,25 @@ The architecture prioritizes:
 
 ---
 
-# Architectural Baseline
+# # Architectural Baseline
 
 Current architecture baseline:
 
-```text id="ac23b1"
-architecture-core-2.4
+```text
+architecture-core-2.5
 ```
 
 Architecture status:
 
-Architecture Maturity ≈ 9.8 / 10 
-Status: READY FOR IMPLEMENTATION 
-Architectural Risk: LOW 
+Architecture Maturity ≈ 9.8 / 10
+
+Status: READY FOR IMPLEMENTATION
+
+Architectural Risk: LOW
+
 Major Redesign Risk: VERY LOW
 
-```text id="ac23b2"
+```text
 Foundation Complete
 
 Metadata Architecture Complete
@@ -67,33 +70,37 @@ Register Architecture Complete
 Valuation Architecture Complete
 
 Reporting Architecture Complete
+
+Integration Architecture Complete
 ```
+
 
 ---
 
-# Обновить Core Business Flow
+# # Platform Architecture Model
 
-Business Objects
+The AcCoreD platform consists of three major architectural domains:
+
+```text
+Transactional Core
         ↓
-Posting
+Business Facts
         ↓
-Register Facts
-        ↓
-Register Totals
-        ↓
-Valuation Engine
-        ↓
-Cost Facts
-        ↓
-Cost Totals Engine
-        ↓
-Cost Balances
-        ↓
-Reporting
+Reporting Layer
         ↓
 Datasets
         ↓
-Presentation
+Integration Layer
+        ↓
+External Systems
+```
+
+Transactional Core is responsible for creating and maintaining business facts.
+
+Reporting transforms business facts into analytical datasets.
+
+Integration exposes platform capabilities and information to external environments.
+
 
 ---
 
@@ -101,34 +108,35 @@ Presentation
 
 The AcCoreD platform is organized into the following architectural layers.
 
-```text id="ac23b3"
 Metadata Layer
- ↓ 
+        ↓
 Compilation Layer
- ↓ 
+        ↓
 Runtime Layer
- ↓ 
+        ↓
 Business Objects
- ↓ 
+        ↓
 Posting Engine
- ↓ 
+        ↓
 Register Engine
- ↓ 
+        ↓
 Valuation Engine
- ↓ 
+        ↓
 Reporting Engine
- ↓ 
-Presentation Layer
-```
+        ↓
+Integration Layer
+        ↓
+External Systems
 
 Each layer builds on services provided by lower layers.
-
 ---
 
-# Architecture Map
+# # Architecture Map
 
-```text id="ac23b4"
+```text
 Metadata
+        ↓
+Compilation
         ↓
 Runtime
         ↓
@@ -143,6 +151,8 @@ Registers
 Valuation
         ↓
 Reporting
+        ↓
+Integration
 ```
 
 ---
@@ -344,47 +354,140 @@ Reporting Reuses Table Engine.
 Reporting Reuses Expression Engine.
 Presentation Is Renderer Independent.
 
+## 9. Integration Architecture
+
+Integration Architecture provides controlled interaction between AcCoreD and external environments.
+
+The subsystem consists of:
+
+Integration Architecture
+
+Integration Model
+
+API Architecture
+
+Event Architecture
+
+Import/Export Architecture
+
+External Connectors
+
+Integration follows the platform-wide Metadata → Compilation → Runtime architecture.
+
+### Responsibilities
+
+* integration contracts;
+* integration services;
+* API publication;
+* event publication;
+* import operations;
+* export operations;
+* connector management;
+* external system integration.
+
+### Core Principles
+
+Contract-First Integration
+
+Event-Aware Architecture
+
+Integration Never Bypasses Runtime
+
+File Formats Are Transport Mechanisms
+
+Connectors Adapt External Systems
+
+### Core Artifacts
+
+```text
+Integration Contract
+
+Integration Service
+
+API Contract
+
+Event Contract
+
+Import Contract
+
+Export Contract
+
+External Connector
+```
+
 
 # Cross-Cutting Architectural Principles
 
 The following principles apply to all subsystems:
 
-1. Metadata-driven behavior.
+1. Metadata-Driven Architecture
 
-2. Deterministic processing.
+2. Runtime/Metadata Separation
 
-3. Explicit facts.
+3. Deterministic Processing
 
-4. Reproducible results.
+4. Explicit Facts
 
-5. Auditability.
+5. Reproducible Results
 
-6. Separation of concerns.
+6. Auditability
 
-7. Storage independence.
+7. Separation Of Concerns
 
-8. UI independence.
+8. Storage Independence
 
-9. Extensibility through metadata.
+9. UI Independence
 
-10. Incremental evolution.
+10. Extensibility Through Metadata
 
-11. Operational Queries Use Materialized Results
+11. Incremental Evolution
 
-12. Audit Queries Use Valuation Facts 
+12. Posting Produces Register Facts
 
-13. Reports Produce Datasets 
+13. Registers Are Source Of Quantity State
 
-14. Dataset And Presentation Are Independent 
+14. Valuation Is Independent From Quantity Accounting
 
-15. Presentation Is Renderer Independent
+15. Cost Facts May Arrive After Quantity Facts
+
+16. Cost Is Produced By Valuation Engine
+
+17. Everything That Has Quantity Must Have Value
+
+18. Cost Balances Are Maintained By Cost Totals Engine
+
+19. Operational Queries Use Materialized Results
+
+20. Audit Queries Use Valuation Facts
+
+21. Reports Produce Datasets
+
+22. Dataset And Presentation Are Independent
+
+23. Presentation Is Renderer Independent
+
+24. Contract-First Integration
+
+25. Events Describe Facts, Not Commands
+
+26. Integration Never Bypasses Runtime
+
+27. APIs Publish Contracts
+
+28. File Formats Are Transport Mechanisms
+
+29. Connectors Adapt External Systems
+
+30. Event Processing Does Not Affect Business Transactions
+
+```
 ---
 
-# Current Architecture Status
+# # Current Architecture Status
 
 Completed architectural stages:
 
-```text id="ac23c3"
+```text
 Architecture Foundation
 
 Metadata Architecture
@@ -403,20 +506,19 @@ Valuation Architecture
 
 Reporting Architecture
 
+Integration Architecture
 ```
 
 Planned architectural stages:
 
-```text id="ac23c4"
-Integration Architecture
-
+```text
 Security Architecture
 
 Deployment Architecture
 
 Workflow Architecture
 
-UI Architecture 
+UI Architecture
 
 Extension Architecture
 ```
@@ -427,12 +529,13 @@ Extension Architecture
 
 Current maturity estimate:
 
-```text id="ac23c5"
+```text
 ≈ 9.8 / 10
 ```
 
 Current status:
 
-```text id="ac23c6"
-READY FOR NEXT ARCHITECTURAL STAGE
+```text
+READY FOR SECURITY ARCHITECTURE
 ```
+
