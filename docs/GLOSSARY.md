@@ -1245,3 +1245,273 @@ Must Have Value
 ```
 
 Valuation dimensions are inherited from quantity accounting dimensions.
+
+## Reporting Architecture
+
+A subsystem responsible for transforming business data, register data, and valuation data into analytical datasets and user-consumable information.
+
+Reporting Architecture includes metadata definitions, runtime execution, dataset generation, and presentation models.
+
+---
+
+## Report
+
+A metadata-defined analytical object that describes how analytical information should be obtained, processed, and presented.
+
+A report does not store analytical results.
+
+---
+
+## Report Definition
+
+A metadata object that defines report structure, data sources, dimensions, measures, filters, parameters, and presentation settings.
+
+---
+
+## Data Source
+
+A metadata-defined provider of analytical data used by reports.
+
+Data Sources abstract report execution from storage and runtime implementation details.
+
+---
+
+## Data Source Provider
+
+A runtime component responsible for retrieving datasets from a specific source type.
+
+---
+
+## Dataset
+
+A platform-neutral analytical data structure produced by report execution.
+
+Datasets form the architectural boundary between Reporting Runtime and Presentation Layer.
+
+---
+
+## Dataset Definition
+
+A metadata description that defines the structure of a report dataset.
+
+A Dataset Definition specifies:
+
+* Data Sources
+* Dimensions
+* Measures
+* Filters
+* Parameters
+* Ordering Rules
+
+---
+
+## Dimension
+
+An analytical axis used to classify, group, filter, and navigate business facts.
+
+Examples include Customer, Product, Warehouse, Period, Region, and Department.
+
+Dimensions answer the question:
+
+> What are we analyzing by?
+
+---
+
+## Measure
+
+A numerical value used to quantify business facts.
+
+Examples include Quantity, Amount, Cost, Profit, and Margin.
+
+Measures answer the question:
+
+> What are we measuring?
+
+---
+
+## Base Measure
+
+A measure directly obtained from source data without additional calculations.
+
+---
+
+## Calculated Measure
+
+A measure derived from one or more measures through analytical expressions.
+
+Calculated Measures are evaluated after aggregation.
+
+---
+
+## Dimension Hierarchy
+
+A metadata-defined hierarchy that organizes dimension values into analytical navigation levels.
+
+Examples:
+
+* Year → Quarter → Month → Day
+* Region → City → Customer
+
+---
+
+## Report Parameter
+
+A runtime value supplied during report execution and used to influence filtering, grouping, calculations, or data acquisition.
+
+---
+
+## Report Compiler
+
+A runtime component that transforms report metadata into compiled runtime structures.
+
+---
+
+## Compiled Report
+
+A runtime representation of a report definition produced by the Report Compiler.
+
+Compiled Reports are independent from metadata storage.
+
+---
+
+## Execution Plan
+
+A runtime structure describing the sequence of operations required to produce a report dataset.
+
+Typical operations include filtering, grouping, aggregation, calculation, and sorting.
+
+---
+
+## Execution Plan Builder
+
+A runtime component responsible for creating execution plans from compiled reports.
+
+---
+
+## Report Executor
+
+A runtime component responsible for executing report execution plans and producing datasets.
+
+---
+
+## Report Manager
+
+The primary runtime entry point for report execution requests.
+
+The Report Manager coordinates report validation, compilation, planning, and execution.
+
+---
+
+## Data Source Manager
+
+A runtime component responsible for resolving data source providers and acquiring datasets.
+
+---
+
+## Report Runtime
+
+The runtime subsystem responsible for transforming report metadata into analytical datasets.
+
+Report Runtime does not perform presentation or export operations.
+
+---
+
+## Presentation Layer
+
+A subsystem responsible for transforming datasets into user-consumable representations.
+
+Presentation is independent from report execution.
+
+---
+
+## Presentation Model
+
+A metadata structure describing how a dataset should be displayed.
+
+Presentation Models are independent from rendering technologies.
+
+---
+
+## Presentation Renderer
+
+A component responsible for transforming presentation definitions into technology-specific outputs.
+
+Examples include Qt renderers, web renderers, Excel renderers, and PDF renderers.
+
+---
+
+## Tabular Presentation
+
+A presentation type that displays datasets as rows and columns.
+
+---
+
+## Pivot Presentation
+
+A presentation type that displays datasets using dimensions and measures arranged in analytical matrices.
+
+---
+
+## Chart Presentation
+
+A presentation type that visualizes datasets using graphical representations.
+
+---
+
+## Dashboard Presentation
+
+A presentation type that combines multiple analytical views into a unified interface.
+
+---
+
+## Export Presentation
+
+A presentation type that generates portable outputs such as Excel, PDF, CSV, or JSON.
+
+---
+
+## Dataset Cache
+
+A runtime cache containing previously generated datasets.
+
+Dataset Caching is an optimization mechanism and does not affect report semantics.
+
+---
+
+## Drill-Down
+
+An analytical navigation operation that moves from aggregated information to more detailed information.
+
+Drill-Down may use Dimension Hierarchies or report-specific navigation paths.
+
+---
+
+## Roll-Up
+
+An analytical navigation operation that moves from detailed information to higher aggregation levels.
+
+---
+
+## Analytical Dataset
+
+A dataset intended for analytical processing, aggregation, visualization, or decision support.
+
+---
+
+## Analytical Model
+
+The combination of Dimensions and Measures used to describe and analyze business facts.
+
+---
+
+## Renderer Independence
+
+An architectural principle stating that presentation definitions must remain independent from rendering technologies.
+
+---
+
+## Dataset/Presentation Separation
+
+An architectural principle stating that report execution produces datasets while presentation consumes datasets.
+
+Neither layer depends on the internal implementation details of the other.

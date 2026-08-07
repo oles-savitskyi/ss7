@@ -39,10 +39,15 @@ The architecture prioritizes:
 Current architecture baseline:
 
 ```text id="ac23b1"
-architecture-core-2.3
+architecture-core-2.4
 ```
 
 Architecture status:
+
+Architecture Maturity ≈ 9.8 / 10 
+Status: READY FOR IMPLEMENTATION 
+Architectural Risk: LOW 
+Major Redesign Risk: VERY LOW
 
 ```text id="ac23b2"
 Foundation Complete
@@ -60,7 +65,35 @@ Posting Architecture Complete
 Register Architecture Complete
 
 Valuation Architecture Complete
+
+Reporting Architecture Complete
 ```
+
+---
+
+# Обновить Core Business Flow
+
+Business Objects
+        ↓
+Posting
+        ↓
+Register Facts
+        ↓
+Register Totals
+        ↓
+Valuation Engine
+        ↓
+Cost Facts
+        ↓
+Cost Totals Engine
+        ↓
+Cost Balances
+        ↓
+Reporting
+        ↓
+Datasets
+        ↓
+Presentation
 
 ---
 
@@ -70,20 +103,22 @@ The AcCoreD platform is organized into the following architectural layers.
 
 ```text id="ac23b3"
 Metadata Layer
-        ↓
+ ↓ 
+Compilation Layer
+ ↓ 
 Runtime Layer
-        ↓
-Object Layer
-        ↓
-Storage Layer
-        ↓
-Posting Layer
-        ↓
-Register Layer
-        ↓
-Valuation Layer
-        ↓
-Reporting Layer
+ ↓ 
+Business Objects
+ ↓ 
+Posting Engine
+ ↓ 
+Register Engine
+ ↓ 
+Valuation Engine
+ ↓ 
+Reporting Engine
+ ↓ 
+Presentation Layer
 ```
 
 Each layer builds on services provided by lower layers.
@@ -284,21 +319,31 @@ Cost Balance
 
 ## 8. Reporting Architecture
 
-Status:
+Reporting Architecture is responsible for transforming business, register, and valuation information into analytical datasets and user-consumable representations.
 
-```text id="ac23c2"
-Planned
-```
+The subsystem consists of:
 
-Responsibilities:
+Report Metadata Model
+Data Source Model
+Dataset Definition Model
+Dimension & Measure Model
+Report Execution Model
+Report Runtime Model
+Report Presentation Model
 
-* analytical queries;
-* reporting model;
-* report execution;
-* report aggregation;
-* presentation models.
+Reporting follows the platform-wide Metadata → Compilation → Runtime architecture.
 
----
+
+### Reporting Principles
+Reports are Metadata Objects.
+Reports are Compiled Before Execution.
+Report Execution Produces Datasets.
+Dataset And Presentation Are Independent.
+Reporting Reuses Platform Runtime Services.
+Reporting Reuses Table Engine.
+Reporting Reuses Expression Engine.
+Presentation Is Renderer Independent.
+
 
 # Cross-Cutting Architectural Principles
 
@@ -324,6 +369,15 @@ The following principles apply to all subsystems:
 
 10. Incremental evolution.
 
+11. Operational Queries Use Materialized Results
+
+12. Audit Queries Use Valuation Facts 
+
+13. Reports Produce Datasets 
+
+14. Dataset And Presentation Are Independent 
+
+15. Presentation Is Renderer Independent
 ---
 
 # Current Architecture Status
@@ -346,18 +400,25 @@ Posting Architecture
 Register Architecture
 
 Valuation Architecture
+
+Reporting Architecture
+
 ```
 
 Planned architectural stages:
 
 ```text id="ac23c4"
-Reporting Architecture
-
 Integration Architecture
 
 Security Architecture
 
 Deployment Architecture
+
+Workflow Architecture
+
+UI Architecture 
+
+Extension Architecture
 ```
 
 ---
@@ -367,7 +428,7 @@ Deployment Architecture
 Current maturity estimate:
 
 ```text id="ac23c5"
-≈ 9.7 / 10
+≈ 9.8 / 10
 ```
 
 Current status:
