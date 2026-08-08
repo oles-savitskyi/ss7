@@ -1760,3 +1760,50 @@ An architectural principle stating that business semantics remain independent fr
 ### Runtime-Mediated Integration
 
 An architectural principle stating that all external interactions must pass through Runtime Services rather than directly accessing storage or internal structures.
+
+## Security Architecture
+
+### Authentication
+Process of verifying identity.
+
+### Authorization
+Process of determining whether an authenticated principal may perform an operation.
+
+### Principal
+Runtime representation of an authenticated identity.
+
+### Role
+Collection of permissions assigned to users.
+
+### Permission
+Authorization unit representing an allowed operation on a security object.
+
+### Security Object
+Metadata-based protected resource participating in authorization.
+
+### Constraint
+Contextual restriction applied to a permission.
+
+### Session
+Authenticated runtime context associated with a principal.
+
+### Audit Event
+Immutable record describing a security-relevant or business-relevant action.
+
+### Audit Trail
+Append-only collection of audit events.
+
+### Security Policy
+Platform-wide mandatory security rule.
+
+### Service Account
+Non-human identity used by integrations and background processes.
+
+### Default Deny
+Security principle that denies access unless explicitly granted.
+
+### Least Privilege
+Security principle granting only required permissions.
+
+### Fail Closed
+Security principle that denies access when security evaluation cannot be completed.

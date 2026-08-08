@@ -72,6 +72,8 @@ Valuation Architecture Complete
 Reporting Architecture Complete
 
 Integration Architecture Complete
+
+Security Architecture Complete
 ```
 
 
@@ -153,6 +155,8 @@ Valuation
 Reporting
         ↓
 Integration
+        ↓
+Security
 ```
 
 ---
@@ -415,6 +419,7 @@ Export Contract
 External Connector
 ```
 
+## 10. Security Architecture
 
 # Cross-Cutting Architectural Principles
 
@@ -480,6 +485,17 @@ The following principles apply to all subsystems:
 
 30. Event Processing Does Not Affect Business Transactions
 
+31. Security Is Metadata-Driven
+
+32. Default Deny
+
+33. Least Privilege
+
+34. Fail Closed
+
+35. Audit Is Append-Only
+
+36. Authentication And Authorization Are Separate
 ```
 ---
 
@@ -507,13 +523,13 @@ Valuation Architecture
 Reporting Architecture
 
 Integration Architecture
+
+Security Architecture
 ```
 
 Planned architectural stages:
 
 ```text
-Security Architecture
-
 Deployment Architecture
 
 Workflow Architecture
@@ -530,12 +546,12 @@ Extension Architecture
 Current maturity estimate:
 
 ```text
-≈ 9.8 / 10
+≈ 9.9 / 10
 ```
 
 Current status:
 
 ```text
-READY FOR SECURITY ARCHITECTURE
+READY FOR WORKFLOW ARCHITECTURE
 ```
 
