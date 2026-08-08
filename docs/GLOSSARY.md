@@ -1807,3 +1807,42 @@ Security principle granting only required permissions.
 
 ### Fail Closed
 Security principle that denies access when security evaluation cannot be completed.
+
+## Workflow
+Metadata-driven process coordinating lifecycle of business objects.
+
+### Workflow Definition
+Metadata description of states, transitions, approvals and automation rules.
+
+### Workflow Instance
+Runtime execution of a workflow definition.
+
+### State
+Business lifecycle stage of a workflow-controlled object.
+
+### Transition
+Allowed movement between workflow states.
+
+### Approval Rule
+Rule defining approval requirements for a transition.
+
+### Task
+Workflow-generated unit of work assigned to a user or role.
+
+### Automation Rule
+Metadata-defined action automatically executed by Workflow Runtime.
+
+### Workflow Engine
+Runtime component coordinating workflow execution.
+
+### Workflow History
+Historical record of workflow transitions and decisions.
+
+### Business State
+Domain-specific lifecycle state such as Draft, Approved or Posted.
+
+### Lifecycle State
+Runtime execution state such as Active, Waiting Approval or Completed.
+
+### Workflow Context
+Runtime context used during workflow execution.

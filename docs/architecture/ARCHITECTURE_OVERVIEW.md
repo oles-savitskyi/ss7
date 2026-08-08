@@ -39,7 +39,7 @@ The architecture prioritizes:
 Current architecture baseline:
 
 ```text
-architecture-core-2.5
+architecture-core-2.6
 ```
 
 Architecture status:
@@ -74,6 +74,8 @@ Reporting Architecture Complete
 Integration Architecture Complete
 
 Security Architecture Complete
+
+Workflow Architecture Complete
 ```
 
 
@@ -153,10 +155,15 @@ Registers
 Valuation
         ↓
 Reporting
-        ↓
-Integration
-        ↓
-Security
+
+Workflow
+    ↔ Security
+
+Workflow
+    ↔ Integration
+
+Workflow
+    ↔ Audit
 ```
 
 ---
@@ -496,6 +503,16 @@ The following principles apply to all subsystems:
 35. Audit Is Append-Only
 
 36. Authentication And Authorization Are Separate
+
+37. Workflow Is Metadata-Driven
+
+38. Workflow Is State-Based
+
+39. Workflow Does Not Bypass Security
+
+40. Workflow Is Audit-Aware
+
+41. Workflow Definitions And Workflow Instances Are Separate
 ```
 ---
 
@@ -525,14 +542,14 @@ Reporting Architecture
 Integration Architecture
 
 Security Architecture
+
+Workflow Architecture
 ```
 
 Planned architectural stages:
 
 ```text
 Deployment Architecture
-
-Workflow Architecture
 
 UI Architecture
 
