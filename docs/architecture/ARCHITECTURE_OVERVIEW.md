@@ -39,7 +39,7 @@ The architecture prioritizes:
 Current architecture baseline:
 
 ```text
-architecture-core-2.6
+architecture-core-2.8
 ```
 
 Architecture status:
@@ -76,6 +76,8 @@ Integration Architecture Complete
 Security Architecture Complete
 
 Workflow Architecture Complete
+
+Configuration Architecture Complete
 ```
 
 
@@ -98,14 +100,31 @@ Integration Layer
         ↓
 External Systems
 ```
-
 Transactional Core is responsible for creating and maintaining business facts.
 
 Reporting transforms business facts into analytical datasets.
 
 Integration exposes platform capabilities and information to external environments.
 
+Ключевая формула платформы
 
+Platform
+      +
+Configuration
+      +
+Extensions
+      =
+Business Application
+
+Ключевая формула композиции
+
+Platform Metadata
+        +
+Configuration Metadata
+        +
+Extension Metadata
+        =
+Runtime Metadata Model
 ---
 
 # Architectural Layers
@@ -138,32 +157,27 @@ Each layer builds on services provided by lower layers.
 # # Architecture Map
 
 ```text
-Metadata
-        ↓
-Compilation
-        ↓
+Platform
+      +
+Configuration
+      +
+Extensions
+      ↓
+Runtime Metadata Model
+      ↓
 Runtime
-        ↓
+      ↓
 Objects
-        ↓
-Storage
-        ↓
+      ↓
+Workflow
+      ↓
 Posting
-        ↓
+      ↓
 Registers
-        ↓
+      ↓
 Valuation
-        ↓
+      ↓
 Reporting
-
-Workflow
-    ↔ Security
-
-Workflow
-    ↔ Integration
-
-Workflow
-    ↔ Audit
 ```
 
 ---
@@ -428,6 +442,13 @@ External Connector
 
 ## 10. Security Architecture
 
+## 11. Workflow Architecture 
+
+## 12. Configuration Architecture
+
+Configuration Architecture Maturity
+≈ 9.9 / 10
+
 # Cross-Cutting Architectural Principles
 
 The following principles apply to all subsystems:
@@ -513,6 +534,18 @@ The following principles apply to all subsystems:
 40. Workflow Is Audit-Aware
 
 41. Workflow Definitions And Workflow Instances Are Separate
+
+42. Platform And Configuration Are Separate
+
+43. Runtime Executes Unified Metadata
+
+44. Configuration Is Metadata-Based
+
+45. Extensions Are Additive
+
+46. Runtime Metadata Model Is Immutable
+
+47. Configuration Defines, Platform Executes
 ```
 ---
 
@@ -544,6 +577,8 @@ Integration Architecture
 Security Architecture
 
 Workflow Architecture
+
+Configuration Architecture
 ```
 
 Planned architectural stages:
@@ -563,12 +598,12 @@ Extension Architecture
 Current maturity estimate:
 
 ```text
-≈ 9.9 / 10
+≈ 10.0 / 10
 ```
 
 Current status:
 
 ```text
-READY FOR WORKFLOW ARCHITECTURE
+READY FOR NEXT ARCHITECTURAL STAGE
 ```
 

@@ -1846,3 +1846,51 @@ Runtime execution state such as Active, Waiting Approval or Completed.
 
 ### Workflow Context
 Runtime context used during workflow execution.
+
+## Configuration
+Metadata-based business application built on top of the AcCore platform.
+
+### Configuration Version
+Versioned release of a configuration.
+
+### Configuration Package
+Deployable package containing a configuration.
+
+### Extension
+Metadata-based customization applied to a configuration.
+
+### Extension Version
+Versioned release of an extension.
+
+### Metadata Module
+Logical grouping of related metadata definitions.
+
+### Metadata Composition
+Process of assembling metadata from multiple layers.
+
+### Metadata Composer
+Runtime component responsible for metadata assembly.
+
+### Runtime Metadata Model
+Unified metadata model used by Runtime Architecture.
+
+### Configuration Manager
+Runtime component coordinating configuration lifecycle operations.
+
+### Extension Manager
+Runtime component managing extension lifecycle.
+
+### Package Manager
+Runtime component managing configuration and extension packages.
+
+### Configuration Registry
+Runtime registry exposing active configurations and metadata.
+
+### Configuration Activation
+Process of publishing a validated Runtime Metadata Model.
+
+### Configuration Upgrade
+Replacement of an active configuration version by a newer version.
+
+### Configuration Lifecycle
+Lifecycle governing creation, deployment, activation, upgrade, and retirement of configurations.
