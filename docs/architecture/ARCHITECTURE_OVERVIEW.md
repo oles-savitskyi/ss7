@@ -154,7 +154,23 @@ External Systems
 Each layer builds on services provided by lower layers.
 ---
 
-# # Architecture Map
+# Standard Configuration Layer
+
+The AcCore platform includes a reference Standard Configuration intended for small and medium-sized businesses.
+
+The Standard Configuration provides:
+
+* Reference Data Model;
+* Standard Documents;
+* Register Mapping;
+* Standard Workflows;
+* Standard Roles;
+* Standard Reports;
+* Security Configuration.
+
+The Standard Configuration is implemented entirely through metadata and configuration mechanisms and does not require platform modifications.
+
+# Architecture Map
 
 ```text
 Platform
@@ -167,9 +183,11 @@ Runtime Metadata Model
       ↓
 Runtime
       ↓
-Objects
+Business Objects
       ↓
-Workflow
+Documents
+      ↓
+Workflows
       ↓
 Posting
       ↓
@@ -178,6 +196,8 @@ Registers
 Valuation
       ↓
 Reporting
+      ↓
+Roles & Security
 ```
 
 ---
@@ -445,6 +465,53 @@ External Connector
 ## 11. Workflow Architecture 
 
 ## 12. Configuration Architecture
+
+## 13. Standard Configuration
+
+### Continuous Cost Recognition
+
+Business costs should be recognized and allocated as soon as the underlying business event occurs.
+
+Period closing is a fallback mechanism rather than the primary cost recognition mechanism.
+
+---
+
+### Economic Objects Are Unified
+
+All business resources, including inventory, labor, depreciation, and services, ultimately contribute costs to Economic Objects through a unified allocation model.
+
+---
+
+### Registers Store Quantities, Valuation Stores Costs
+
+Registers record quantitative facts.
+
+Valuation Architecture is responsible for cost calculation, cost allocation, and cost balances.
+
+---
+
+### Labor And Depreciation Follow The Same Resource Model As Inventory
+
+Labor and asset utilization are treated as quantitative resources.
+
+Their costs are calculated and allocated through the same valuation principles used for inventory resources.
+
+---
+
+### Role Permissions Are Business-Object-Oriented
+
+Permissions are defined against business domains and business objects rather than technical CRUD operations.
+
+---
+
+### Access Rights Are Defined Through Access Modes
+
+The Standard Configuration defines three access modes:
+
+* View;
+* Execute;
+* Administer.
+
 
 Configuration Architecture Maturity
 ≈ 9.9 / 10

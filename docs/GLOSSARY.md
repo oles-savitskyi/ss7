@@ -1894,3 +1894,206 @@ Replacement of an active configuration version by a newer version.
 
 ### Configuration Lifecycle
 Lifecycle governing creation, deployment, activation, upgrade, and retirement of configurations.
+
+## Standard Configuration
+
+A predefined business application built on top of the AcCore platform.
+
+The Standard Configuration provides a complete SMB-oriented accounting and business management solution including reference data, documents, workflows, reporting, and security configuration.
+
+---
+
+### Continuous Cost Recognition
+
+An accounting principle stating that business costs should be recognized and allocated as soon as the underlying business event occurs.
+
+The principle applies to labor, depreciation, materials, services, and other business resources.
+
+Period closing serves as a fallback mechanism rather than the primary recognition mechanism.
+
+---
+
+### Economic Object
+
+The final business object that receives costs.
+
+Examples include:
+
+* purchased goods;
+* produced products;
+* sold products;
+* services;
+* other business assets.
+
+Cost allocation ultimately targets Economic Objects.
+
+---
+
+### Direct Expense
+
+An expense whose final cost receiver is known at the moment of recognition.
+
+Direct expenses do not require cross-document allocation.
+
+Examples:
+
+* material consumed by a specific production order;
+* labor assigned directly to a specific product.
+
+---
+
+### Related Expense
+
+An expense whose final cost receiver is not fully known at the moment of recognition.
+
+Related expenses are allocated through one or more allocation stages before reaching Economic Objects.
+
+Examples:
+
+* shared labor costs;
+* shared depreciation;
+* transportation expenses;
+* administrative costs.
+
+---
+
+### Unallocated Cost
+
+A recognized cost that has not yet been assigned to a specific Economic Object.
+
+Unallocated costs may later be allocated operationally or recognized through period closing procedures.
+
+---
+
+### Salary Booking
+
+The process that continuously recognizes labor quantities and labor costs.
+
+Salary Booking creates labor facts independently from payroll taxation and payroll reporting.
+
+---
+
+### Salary Sharing
+
+The process that allocates recognized labor costs to business documents and Economic Objects.
+
+---
+
+### Salary Taxation
+
+The process that creates employee deductions and payroll tax liabilities.
+
+Salary Taxation is independent from labor recognition and labor allocation.
+
+---
+
+### Salary Rollout
+
+A consolidated payroll statement containing accruals, deductions, taxes, and other payroll information.
+
+Salary Rollout does not create register movements.
+
+---
+
+### Depreciation Booking
+
+The process that continuously recognizes asset utilization and corresponding depreciation costs.
+
+---
+
+### Depreciation Sharing
+
+The process that allocates depreciation costs to business documents and Economic Objects.
+
+---
+
+### Depreciation Rate Plan
+
+A time-dependent reference document defining planned hourly depreciation rates for assets.
+
+---
+
+### Bill To Pay
+
+A planned or intended payment associated with a business transaction.
+
+Bill To Pay does not create register movements and does not represent a financial fact.
+
+Actual payment is recorded only through Cash documents.
+
+---
+
+### Resource Register
+
+A register that records quantitative movements of inventory and other economic resources.
+
+Resource Register stores quantities only and does not store costs.
+
+---
+
+### Labor Register
+
+A register that records labor quantities recognized through Salary Booking.
+
+Labor costs are maintained by the Valuation Engine.
+
+---
+
+### Asset Utilization Register
+
+A register that records quantitative asset utilization recognized through Depreciation Booking.
+
+Depreciation costs are maintained by the Valuation Engine.
+
+---
+
+### Settlement Register
+
+A register that records receivables, payables, payroll liabilities, and tax liabilities.
+
+Settlement Register stores obligations and claims rather than quantities.
+
+---
+
+### Cash Register
+
+A register that records actual cash and bank movements.
+
+Cash Register is the authoritative source of payment facts.
+
+---
+
+### Access Mode
+
+A permission level assigned to a business object.
+
+The Standard Configuration defines:
+
+* View;
+* Execute;
+* Administer.
+
+---
+
+### Data Scope
+
+A security restriction limiting access to a subset of business data.
+
+Examples:
+
+* departments;
+* employee groups;
+* financial accounts;
+* business partner categories.
+
+---
+
+### Object Scope
+
+A security restriction limiting access to a specific part of a business object.
+
+Examples:
+
+* document tabs;
+* document sections;
+* catalog folders.
